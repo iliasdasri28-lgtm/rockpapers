@@ -1,0 +1,8 @@
+import streatlit  as st
+import random
+if st.button("Rock 🪨 ")
+  com_choice = random.choice(["rock","paper","scissor"])
+  if com_choice = "rock" :
+    print(f"congratulations 🎉 you won computer choice is {com_choice}")
+  else:
+    print(f"you lost the computer chose {com_choice})
