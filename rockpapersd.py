@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 def rpsgame():
- try:
+ 
     if st.button("Rock 🪨 "):
       com_choice = random.choice(["rock","paper","scissor"])
     
@@ -31,9 +31,6 @@ def rpsgame():
         st.text("you lost ☹️")
       elif com_choice == "scissor" :
         st.text("draw 🤝")
-      
- except:
-    st.text("error")
    
 if "page" not in st.session_state:
   st.session_state["page"] = "home"
