@@ -1,6 +1,7 @@
-import streamlit  as st
+import streamlit as st
 import random
-try:
+def rpsgame()
+ try:
   if st.button("Rock 🪨 "):
     com_choice = random.choice(["rock","paper","scissor"])
     
@@ -31,5 +32,18 @@ try:
     elif com_choice == "scissor" :
       st.text("draw 🤝")
       
-except:
+ except:
   st.text("error")
+   
+if "page" not in st.session_state:
+  st.session_state["page"] = "home"
+  if st.session_state["page"] == "home" :
+    st.title("Welcome to the idk:")
+    if st.button("RPSgame"):
+      st.session_state["page"] = "game"
+    if st.button("project2"):
+      st.session_state["page"] = "agecal"
+  elif st.session_state["page"] == "game"
+    rpsgame()
+  elif st.session_state["page"] == "project2"
+    st.text("coming soon")
