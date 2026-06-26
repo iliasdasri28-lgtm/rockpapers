@@ -37,12 +37,17 @@ def rpsgame():
    
 if "page" not in st.session_state:
   st.session_state["page"] = "home"
+ 
   if st.session_state["page"] == "home" :
     st.title("Welcome to the idk:")
+   
     if st.button("RPSgame"):
       st.session_state["page"] = "game"
+      st.rerun()
     if st.button("project2"):
       st.session_state["page"] = "agecal"
+      st.rerun()
+     
   elif st.session_state["page"] == "game":
     rpsgame()
   elif st.session_state["page"] == "project2":
