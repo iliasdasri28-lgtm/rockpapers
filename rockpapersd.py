@@ -38,7 +38,6 @@ if st.session_state["page"] != "home":
   if st.button("⬅️ العودة للقائمة الرئيسية"):
         st.session_state["page"] = "home"
         st.rerun()
-    st.write("---")
  
   if st.session_state["page"] == "home" :
     st.title("Welcome to the idk:")
