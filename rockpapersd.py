@@ -5,7 +5,7 @@ def rpsgame():
     if st.button("Rock 🪨 "):
       com_choice = random.choice(["rock","paper","scissor"])
     
-    if com_choice == "scissor" :
+      if com_choice == "scissor" :
         st.text(f"congratulations 🎉 you won computer choice is {com_choice}")
       elif com_choice == "paper" :
         st.text("you lost ☹️")
