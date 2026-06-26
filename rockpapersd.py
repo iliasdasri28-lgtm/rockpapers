@@ -42,7 +42,7 @@ if "page" not in st.session_state:
       st.session_state["page"] = "game"
       st.rerun()
     if st.button("project2"):
-      st.session_state["page"] = "agecal"
+      st.session_state["page"] = "project2"
       st.rerun()
      
   elif st.session_state["page"] == "game":
