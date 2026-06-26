@@ -48,7 +48,7 @@ if st.session_state["page"] == "home" :
       st.session_state["page"] = "project2"
       st.rerun()
      
-  elif st.session_state["page"] == "game":
+elif st.session_state["page"] == "game":
     rpsgame()
-  elif st.session_state["page"] == "project2":
+elif st.session_state["page"] == "project2":
     st.text("coming soon")
