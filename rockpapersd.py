@@ -43,7 +43,7 @@ if "page" not in st.session_state:
       st.session_state["page"] = "game"
     if st.button("project2"):
       st.session_state["page"] = "agecal"
-  elif st.session_state["page"] == "game"
+  elif st.session_state["page"] == "game":
     rpsgame()
-  elif st.session_state["page"] == "project2"
+  elif st.session_state["page"] == "project2":
     st.text("coming soon")
