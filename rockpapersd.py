@@ -38,8 +38,7 @@ if st.session_state["page"] != "home":
   if st.button("⬅️ العودة للقائمة الرئيسية"):
         st.session_state["page"] = "home"
         st.rerun()
- 
-  if st.session_state["page"] == "home" :
+if st.session_state["page"] == "home" :
     st.title("Welcome to the idk:")
    
     if st.button("RPSgame"):
