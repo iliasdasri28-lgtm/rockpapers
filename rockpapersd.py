@@ -31,7 +31,44 @@ def rpsgame():
         st.text("you lost ☹️")
       elif com_choice == "scissor" :
         st.text("draw 🤝")
-   
+def agecal():
+
+ born = st.text_input("what time have you born:\n")
+ date = st.text_input("what today date:\n")
+
+ if st.button("Calculate"):
+    try:
+        
+        daydate,monthdate,yeardate = date.split("/")
+        
+        today = int(daydate)
+        tomonth = int(monthdate)
+        toyear = int(yeardate)
+        
+        born_day,born_month,born_year=born.split("/")
+        
+        day = int(born_day)
+        month = int(born_month)
+        year = int(born_year)
+        
+        if month > tomonth or (month == tomonth and day > today) : 
+            ageyear = toyear - year - 1
+            
+        else:
+            ageyear = toyear - year
+            
+        if day > today :
+            agemonth = (tomonth - month - 1)%12
+            ageday = (today + 30) - day
+            
+        else:
+            agemonth = (tomonth - month)%12
+            ageday = today - day
+            
+        st.write(f"your age is {ageyear} year and {agemonth} month and {ageday} day")
+    except:
+          st.error("enter the date as number in that form: xx/yy/zzzz")
+ 
 if "page" not in st.session_state:
   st.session_state["page"] = "menu"
 if st.session_state["page"] != "menu":
@@ -42,13 +79,13 @@ if st.session_state["page"] == "menu" :
     st.title("Welcome to the idk:")
    
     if st.button("RPSgame"):
-      st.session_state["page"] = "game"
+      st.session_state["page"] = "rpsgame"
       st.rerun()
-    if st.button("project2"):
-      st.session_state["page"] = "project2"
+    if st.button("agecal"):
+      st.session_state["page"] = "agecal"
       st.rerun()
      
-elif st.session_state["page"] == "game":
+elif st.session_state["page"] == "rpsgame":
     rpsgame()
-elif st.session_state["page"] == "project2":
-    st.text("coming soon")
+elif st.session_state["page"] == "agecal":
+    agecal()
