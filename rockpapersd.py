@@ -33,12 +33,12 @@ def rpsgame():
         st.text("draw 🤝")
    
 if "page" not in st.session_state:
-  st.session_state["page"] = "home"
-if st.session_state["page"] != "home":
-  if st.button("⬅️ العودة للقائمة الرئيسية"):
-        st.session_state["page"] = "home"
+  st.session_state["page"] = "menu"
+if st.session_state["page"] != "menu":
+  if st.button("⬅️ back to menu"):
+        st.session_state["page"] = "menu"
         st.rerun()
-if st.session_state["page"] == "home" :
+if st.session_state["page"] == "menu" :
     st.title("Welcome to the idk:")
    
     if st.button("RPSgame"):
