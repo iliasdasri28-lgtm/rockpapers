@@ -33,7 +33,7 @@ def rpsgame():
         st.text("draw 🤝")
 
 
-def xguess():
+def ×guess():
 
  if st.button("again") :
   a = random.randint(1,10)
