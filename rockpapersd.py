@@ -100,7 +100,7 @@ if st.session_state["page"] == "menu" :
       st.rerun()
     if st.button("×guess") :
       st.session_state["page"] = "xguess"
-      st.rerurn()
+      st.rerun()
      
 elif st.session_state["page"] == "rpsgame":
     rpsgame()
