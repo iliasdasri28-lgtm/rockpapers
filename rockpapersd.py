@@ -31,6 +31,20 @@ def rpsgame():
         st.text("you lost ☹️")
       elif com_choice == "scissor" :
         st.text("draw 🤝")
+
+
+def xguess():
+
+ if st.button("again") :
+  a = random.randint(1,10)
+  b = random.randint(1,100)
+  answer = int(st.text_input(f"{a} × {b} ="))
+  if a*b == answer :
+   st.text("Correct")
+  else :
+   st.text(f"Incorrect the true answer is {answer}")
+
+
 def agecal():
 
  born = st.text_input("what time have you born:\n")
@@ -84,8 +98,13 @@ if st.session_state["page"] == "menu" :
     if st.button("agecal"):
       st.session_state["page"] = "agecal"
       st.rerun()
+    if st.button("×guess") :
+      st.session_state["page"] = "×guess"
+      st.return()
      
 elif st.session_state["page"] == "rpsgame":
     rpsgame()
 elif st.session_state["page"] == "agecal":
     agecal()
+elif st.session_state["page"] == "×guess":
+    ×guess()
