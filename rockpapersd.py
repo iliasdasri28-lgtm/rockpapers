@@ -35,17 +35,31 @@ def rpsgame():
 
 def xguess():
 
- if st.button("again") :
-  a = random.randint(1,10)
-  b = random.randint(1,100)
-  answer = (st.text_input(f"{a} × {b} ="))
-  
-    if a*b == int(answer) :
-     st.text("Correct")
-    else :
-     st.text(f"Incorrect the true answer is {a*b}")
-
-
+ if "a" not in st.session_state or "b" not in st.session_state :
+  st.session_state.a = random.randint(1,10)
+  st.session_state.b = random.randint(1,100)
+  a = st.session_state.a
+  b = st.session_state.b
+  answer = st.text_input(f"{a} × {b} =")
+  if st.button("Done") :
+   if answer :
+    try :
+      if a*b == int(answer) :
+       st.text("Correct")
+       st.session_state.a = random.randint(1,10)
+       st.session_state.b = random.randint(1,100)
+       st.rerun()
+      else :
+       st.text("Incorrect the true answer is {a*b}")
+       st.session_state.a = random.randint(1,10)
+       st.session_state.b = random.randint(1,100)
+       st.rerun()
+    except:
+     st.warning("(⁠✷⁠‿⁠✷⁠)")
+  if st.button("again") :
+   st.session_state.a = random.randint(1,10)
+   st.session_state.b = random.randint(1,100)
+   st.rerun()
 def agecal():
 
  born = st.text_input("what time have you born:\n")
