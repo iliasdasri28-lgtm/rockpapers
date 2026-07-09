@@ -40,7 +40,7 @@ def xguess():
   b = random.randint(1,100)
   answer = int(st.text_input(f"{a} × {b} ="))
   
-  if st.button("done")
+  if st.button("done") :
     if a*b == answer :
      st.text("Correct")
     else :
