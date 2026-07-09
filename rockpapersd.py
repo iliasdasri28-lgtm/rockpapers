@@ -33,7 +33,7 @@ def rpsgame():
         st.text("draw 🤝")
 
 
-def ×guess():
+def xguess():
 
  if st.button("again") :
   a = random.randint(1,10)
@@ -99,12 +99,12 @@ if st.session_state["page"] == "menu" :
       st.session_state["page"] = "agecal"
       st.rerun()
     if st.button("×guess") :
-      st.session_state["page"] = "×guess"
+      st.session_state["page"] = "xguess"
       st.return()
      
 elif st.session_state["page"] == "rpsgame":
     rpsgame()
 elif st.session_state["page"] == "agecal":
     agecal()
-elif st.session_state["page"] == "×guess":
-    ×guess()
+elif st.session_state["page"] == "xguess":
+    xguess()
