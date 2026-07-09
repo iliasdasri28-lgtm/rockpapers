@@ -38,13 +38,12 @@ def xguess():
  if st.button("again") :
   a = random.randint(1,10)
   b = random.randint(1,100)
-  answer = int(st.text_input(f"{a} × {b} ="))
+  answer = (st.text_input(f"{a} × {b} ="))
   
-  if st.button("done") :
-    if a*b == answer :
+    if a*b == int(answer) :
      st.text("Correct")
     else :
-     st.text(f"Incorrect the true answer is {answer}")
+     st.text(f"Incorrect the true answer is {a*b}")
 
 
 def agecal():
