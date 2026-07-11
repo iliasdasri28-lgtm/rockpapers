@@ -46,20 +46,20 @@ def xguess():
     try :
       if a*b == int(answer) :
        st.text("Correct")
-       st.session_state.a = random.randint(1,10)
-       st.session_state.b = random.randint(1,100)
+       del st.session_state.a
+       del st.session_state.b
        st.rerun()
       else :
        st.text("Incorrect the true answer is {a*b}")
-       st.session_state.a = random.randint(1,10)
-       st.session_state.b = random.randint(1,100)
+       del st.session_state.a
+       del st.session_state.b
        st.rerun()
     except:
      st.warning("(⁠✷⁠‿⁠✷⁠)")
   if st.button("again") :
-   st.session_state.a = random.randint(1,10)
-   st.session_state.b = random.randint(1,100)
-   st.rerun()
+    del st.session_state.a
+    del st.session_state.b
+    st.rerun()
 def agecal():
 
  born = st.text_input("what time have you born:\n")
