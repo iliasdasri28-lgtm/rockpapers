@@ -48,17 +48,15 @@ def xguess():
        st.text("Correct")
        del st.session_state.a
        del st.session_state.b
-       st.rerun()
+
       else :
        st.text("Incorrect the true answer is {a*b}")
        del st.session_state.a
        del st.session_state.b
-       st.rerun()
+       
     except:
      st.warning("(⁠✷⁠‿⁠✷⁠)")
   if st.button("again") :
-    del st.session_state.a
-    del st.session_state.b
     st.rerun()
 def agecal():
 
