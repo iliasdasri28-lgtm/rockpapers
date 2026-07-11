@@ -1,6 +1,6 @@
 import streamlit as st
 import random
-def rpsgame():
+#def rpsgame():
  
     if st.button("Rock 🪨 "):
       com_choice = random.choice(["rock","paper","scissor"])
