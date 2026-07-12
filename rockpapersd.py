@@ -34,34 +34,29 @@ def rpsgame():
 
 
 def xguess():
-
- if "a" not in st.session_state or "b" not in st.session_state :
-  st.session_state.a = random.randint(1,10)
-  st.session_state.b = random.randint(1,100)
-  a = st.session_state.a
-  b = st.session_state.b
-  answer = st.text_input(f"{a} × {b} = ")
-  if st.button("Done") :
-   if answer :
-    try :
-      if a*b == int(answer) :
-       st.text("Correct")
-
-      else :
-       st.text(f"Incorrect the true answer is {a*b}")
-       
-    except:
-     st.warning("(⁠✷⁠‿⁠✷⁠)")
-
-  if st.button("again") :
-    del st.session_state.a
-    del st.session_state.b
-    st.session_state.a = random.randint(1,10)
-    st.session_state.b = random.randint(1,100)
+    if "a" not in st.session_state or "b" not in st.session_state:
+        st.session_state.a = random.randint(1, 10)
+        st.session_state.b = random.randint(1, 100)
+        
     a = st.session_state.a
     b = st.session_state.b
-    st.rerun()
-
+    
+    answer = st.text_input(f"{a} * {b} = ")
+    
+    if st.button("Done"):
+        if answer:
+            try:
+                if a * b == int(answer):
+                    st.text("Correct 🎉")
+                else:
+                    st.text(f"Incorrect, the true answer is {a * b}")
+            except ValueError:
+                st.warning("(*_*)")
+                
+    if st.button("again"):
+        st.session_state.a = random.randint(1, 10)
+        st.session_state.b = random.randint(1, 100)
+        st.rerun() 
 
 def agecal():
 
