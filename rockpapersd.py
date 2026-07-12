@@ -1,6 +1,6 @@
 import streamlit as st
 import random
-#def rpsgame():
+def rpsgame():
  
     if st.button("Rock 🪨 "):
       com_choice = random.choice(["rock","paper","scissor"])
@@ -40,24 +40,29 @@ def xguess():
   st.session_state.b = random.randint(1,100)
   a = st.session_state.a
   b = st.session_state.b
-  answer = st.text_input(f"{a} × {b} =")
+  answer = st.text_input(f"{a} × {b} = ")
   if st.button("Done") :
    if answer :
     try :
       if a*b == int(answer) :
        st.text("Correct")
-       del st.session_state.a
-       del st.session_state.b
 
       else :
-       st.text("Incorrect the true answer is {a*b}")
-       del st.session_state.a
-       del st.session_state.b
+       st.text(f"Incorrect the true answer is {a*b}")
        
     except:
      st.warning("(⁠✷⁠‿⁠✷⁠)")
+
   if st.button("again") :
+    del st.session_state.a
+    del st.session_state.b
+    st.session_state.a = random.randint(1,10)
+    st.session_state.b = random.randint(1,100)
+    a = st.session_state.a
+    b = st.session_state.b
     st.rerun()
+
+
 def agecal():
 
  born = st.text_input("what time have you born:\n")
