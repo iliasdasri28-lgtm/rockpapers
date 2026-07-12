@@ -47,12 +47,15 @@ def xguess():
         if answer:
             try:
                 if a * b == int(answer):
-                    st.text("Correct 🎉")
+                    st.text("Correct")
                 else:
-                    st.text(f"Incorrect, the true answer is {a * b}")
+                    st.text("Incorrect")
             except ValueError:
                 st.warning("(*_*)")
                 
+    if st.button("show the answer"):
+        st.text(f"the answer is {a * b}")
+
     if st.button("again"):
         st.session_state.a = random.randint(1, 10)
         st.session_state.b = random.randint(1, 100)
